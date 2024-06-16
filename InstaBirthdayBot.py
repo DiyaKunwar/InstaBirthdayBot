@@ -6,7 +6,7 @@ import time
 playwright = sync_playwright().start()
 data = {'diya.kunwar':[datetime.datetime(2005,6,16),'Diya']}
 if __name__ == '__main__':
-    # today's date in format : DD-MM
+    #today's date in format : DD-MM
     today = datetime.datetime.now().strftime("%d-%m")
 
 for item in data:
@@ -18,11 +18,11 @@ for item in data:
             pwd = input('Enter password: ')
             msg = f"Many Many Happy Returns of the day dear {data[item][1]}!!"
 
-            #
+            #Main function to send birthday message!
             def run(playwright):
                 browser = playwright.chromium.launch(headless=False)
                 #Open the browser
-                context = browser.new_context() #try adding .new_page() here to save lines!!!!!!!!!!!!!!!
+                context = browser.new_context()
                 #Open new page
                 page = context.new_page()
                 #Open Instagram
